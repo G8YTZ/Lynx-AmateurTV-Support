@@ -1,0 +1,82 @@
+name: Bug report
+description: Something in Lynx Amateur TV isn't working as it should.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Please check the [questions and answers](https://gb3oo.co.uk/lynx-amateur-tv/) first; many setup problems are answered there.
+  - type: dropdown
+    id: model
+    attributes:
+      label: Apple TV model
+      options:
+        - Apple TV 4K (3rd generation, 2022)
+        - Apple TV 4K (2nd generation, 2021)
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: tvos
+    attributes:
+      label: tvOS version
+      description: Settings → General → About
+      placeholder: e.g. 27.2
+    validations:
+      required: true
+  - type: input
+    id: lynx
+    attributes:
+      label: Lynx version
+      description: Settings → About Lynx
+      placeholder: e.g. 1.0 (2)
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: What were you watching?
+      multiple: true
+      options:
+        - BATC live stream
+        - Repeater via Picotuner (ON AIR)
+        - Picotuner, tuned by hand or a memory
+        - HDHomeRun DVB-T/T2
+        - HDHomeRun ATSC 1.0/3.0
+        - Not playing anything (menus or settings)
+    validations:
+      required: true
+  - type: input
+    id: what
+    attributes:
+      label: Stream, repeater or frequency
+      placeholder: e.g. GB3OO via BATC, or 1249 MHz 333 kS/s
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+      description: Step by step, please. What did you press, and what did you see or hear?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: dropdown
+    id: often
+    attributes:
+      label: How often?
+      options:
+        - Every time
+        - Sometimes
+        - Once
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Photos of the screen (drag them in), PPM on or off, network setup, other receivers on the same tuner...
